@@ -4,8 +4,8 @@
 
   :root {
     --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 20, 20, 20;
-    --background-end-rgb: 30, 30, 30;
+    --background-start-rgb: 30, 30, 30;
+    --background-end-rgb: 50, 50, 50;
   }
 
 body {
@@ -18,3 +18,37 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+#sunCore {
+  animation: spin 6s infinite ;
+  box-shadow: 0 0 1rem #facc15;
+}
+
+#sunRay3 {
+  animation: spin 5s infinite reverse;
+  box-shadow: 0 0 1rem #ea580c;
+}
+
+#sunRay2 {
+  animation: spin 4s infinite;
+  box-shadow: 0 0 1rem #facc15;
+}
+
+#sunRay1 {
+  animation: spin 3s infinite reverse;
+  box-shadow: 0 0 10rem #facc15;
+}
+
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg) scale(97%);
+  }
+
+  50% {
+    transform: rotate(180deg) scale(100%);
+  }
+
+  100%{
+    transform: rotate(360deg) scale(97%);
+  }
+}
