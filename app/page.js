@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { useAuth } from "./context/AuthContext";
 import { useRouter } from "next/navigation";
+import { FaCheckCircle } from "react-icons/fa";
 
 export default function Home() {
 
@@ -14,7 +15,6 @@ export default function Home() {
   const[errorMessage, setErrorMessage] = useState(null);
 
   const {currentUser, signIn, signUp} = useAuth();
-  console.log(`user: ${currentUser}`);
 
   async function submitHandler() {
     if(!email || !password) {
@@ -42,7 +42,7 @@ export default function Home() {
 
   async function guestLogin() {
     try{
-      signIn("guest@example.com", "Password");
+      signIn("Guest@user.com", "Password");
       router.push("/mainPage");
     } catch (error) {
       console.log(error)
@@ -56,7 +56,9 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-center p-24">
-      <h1 className="mb-2 text-3xl uppercase top-7 absolute">Goal Tracker</h1>
+      <div className="flex flex-row text-3xl absolute top-10">
+        <h1 className="mb-2 uppercase top-7">Goal Tracker</h1><FaCheckCircle className="ml-2"/>
+      </div>
       <div className="bg-gray-700 flex flex-1 w-full max-w-md flex-col p-5 justify-center items-center rounded-lg min-w-72">
         <h2 className="mb-2 text-2xl uppercase">{loggingIn? "Login": "Register"}</h2>
         <h3 className="text-red-500">{errorMessage}</h3>

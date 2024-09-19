@@ -10,6 +10,8 @@ import { RiLogoutBoxFill } from "react-icons/ri";
 import { useAuth } from "../context/AuthContext";
 import { useRouter } from "next/navigation";
 import Sun from "./sun";
+import Rain from "./rain";
+import Snow from "./snow";
 
 export default function Dashboard() {
     const {logOut} = useAuth()
@@ -128,10 +130,10 @@ export default function Dashboard() {
 
     useEffect(() => {
         updateWeather()
+        setInterval(updateWeather, 600000);
         console.log("Updated Weather")
     },[]);
 
-    setInterval(updateWeather, 600000);
 
     //Clock stuff
     const [hours, setHours] = useState(12);
@@ -196,8 +198,8 @@ export default function Dashboard() {
     
 
     return(
-        <div id="dashboardPane" className={`flex flex-row w-screen h-32 justify-center items-center
-        top-0 relative bg-gradient-to-t
+        <div id="dashboardPane" className={`flex flex-row w-screen min-h-32 justify-center items-center
+        top-0 relative bg-gradient-to-t overflow-hidden ${snowyBackground ? "text-black" : "text-white"}
         ${rainyBackground? "from-slate-800 to-slate-600":"from-sky-900 to-sky-300"}`}>
             <div id="weatherDiv" className="flex flex-col absolute top-5 left-5 z-30">
                 <div id="tempDiv" className="flex flex-row">
@@ -217,7 +219,9 @@ export default function Dashboard() {
             <span id="logoutButton" className="text-2xl top-5 right-5 absolute cursor-pointer 
             duration-300 hover:scale-125 hover:opacity-50 sm:text-3xl z-30"
             onClick={handleLogOut}><RiLogoutBoxFill/></span>
-            <Sun/>
+            {sunnyBackground && <Sun/>}
+            {rainyBackground && <Rain/>}
+            {snowyBackground && <Snow/>}
         </div>
     )
 }

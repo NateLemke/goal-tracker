@@ -18,6 +18,15 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none; 
+}
+
 #sunCore {
   animation: spin 6s infinite ;
   box-shadow: 0 0 1rem #facc15;
@@ -38,6 +47,171 @@ body {
   box-shadow: 0 0 10rem #facc15;
 }
 
+#sunshine1 {
+  animation: spin 2s infinite;
+  box-shadow: 0 0 10rem #facc15;
+}
+
+#raindrop1 {
+  left: -10%;
+  animation-delay: 100ms;
+}
+
+#raindrop2 {
+  left: 12%;
+  animation-delay: 1200ms;
+}
+
+#raindrop3 {
+  left: 25%;
+  animation-delay: 2300ms;
+}
+
+#raindrop4 {
+  left: 46%;
+  animation-delay: 1400ms;
+}
+
+#raindrop5 {
+  left: 72%;
+  animation-delay: 1800ms;
+}
+
+#raindrop6 {
+  left: -20%;
+  animation-delay: 500ms;
+}
+
+#raindrop7 {
+  left: 19%;
+  animation-delay: 800ms;
+}
+
+#raindrop8 {
+  left: 30%;
+  animation-delay: 700ms;
+}
+
+#raindrop9 {
+  left: 66%;
+  animation-delay: 800ms;
+}
+
+#raindrop10 {
+  left: 81%;
+  animation-delay: 400ms;
+}
+
+
+
+.raindrop {
+  top:-40px;
+  animation-name: rain;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+#snowflake1 {
+  left: 6%;
+  animation-delay: 0;
+}
+
+#snowflake2 {
+  left: 14%;
+  animation-delay: 3s;
+}
+
+#snowflake3 {
+  left: 25%;
+  animation-delay: 0;
+}
+
+#snowflake4 {
+  left: 33%;
+  animation-delay: 5s;
+}
+
+#snowflake5 {
+  left: 49%;
+  animation-delay: 2s;
+}
+
+#snowflake6 {
+  left: 56%;
+  animation-delay: 0;
+}
+
+#snowflake7 {
+  left: 66%;
+  animation-delay: 3s;
+}
+
+#snowflake8 {
+  left: 75%;
+  animation-delay: 1s;
+}
+
+#snowflake9 {
+  left: 86%;
+  animation-delay: 5s;
+}
+
+#snowflake10 {
+  left: 92%;
+  animation-delay: 2s;
+}
+
+#snowflake11 {
+  left: 8%;
+  animation-delay: 5s;
+}
+
+#snowflake12 {
+  left: 80%;
+  animation-delay: 3s;
+}
+
+#snowflake13 {
+  left: 30%;
+  animation-delay: 1s;
+}
+
+#snowflake14 {
+  left: 60%;
+  animation-delay: 5s;
+}
+
+#snowflake15 {
+  left: 17%;
+  animation-delay: 2s;
+}
+
+.duration4 {
+  animation-duration: 4s;
+}
+
+.duration5 {
+  animation-duration: 5s;
+}
+
+.duration6 {
+  animation-duration: 6s;
+}
+
+.snowflake {
+  top: -50px;
+  animation-name: fall;
+  animation-duration: 7s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.swaying {
+  animation-name: sway;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
 
 @keyframes spin {
   0% {
@@ -51,4 +225,50 @@ body {
   100%{
     transform: rotate(360deg) scale(97%);
   }
+}
+
+@keyframes rain {
+
+  0% {
+    transform: translateX(-20vw) translateY(-20vh) rotate(-45deg);
+  }
+
+  100% {
+    transform: translateX(30vw) translateY(30vh) rotate(-45deg);
+  }
+  
+}
+
+@keyframes fall {
+    0% {transform: translateY(-10vh);}
+    100%{transform: translateY(40vh);}
+}
+
+@keyframes sway {
+  0% {transform: translateX(0);}
+  50%{transform: translateX(200%);}
+  100%{transform: translateX(0);}
+}
+
+@media  screen and (max-width: 600px) {
+  @keyframes rain {
+
+    0% {
+      transform: translateX(-20vw) translateY(-20vh) rotate(-45deg);
+    }
+  
+    100% {
+      transform: translateX(90vw) translateY(60vh) rotate(-45deg);
+    }
+    
+  }
+
+  #snowflake6 {visibility: hidden;}
+  #snowflake7 {visibility: hidden;}
+  #snowflake8 {visibility: hidden;}
+  #snowflake4 {visibility: hidden;}
+  #snowflake9 {visibility: hidden;}
+  #snowflake5 {visibility: hidden;}
+  #snowflake2 {visibility: hidden;}
+  #snowflake3 {visibility: hidden;}
 }
