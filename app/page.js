@@ -42,7 +42,7 @@ export default function Home() {
 
   async function guestLogin() {
     try{
-      signIn("Guest@user.com", "Password");
+      await signIn("Guest@user.com", "Password");
       router.push("/mainPage");
     } catch (error) {
       console.log(error)
