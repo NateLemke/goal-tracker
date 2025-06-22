@@ -4,6 +4,7 @@ import { AuthProvider } from "./context/AuthContext";
 import { TaskProvider } from "./context/taskContext";
 
 const font = Outfit({ weight: '400',subsets: ["latin"] });
+//Test Comment
 
 export const metadata = {
   title: "Goal tracker",
